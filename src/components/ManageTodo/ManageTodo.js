@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import {  useNavigate } from "react-router-dom";
 
 const ManageTodo = () => {
+     const navigate = useNavigate()
+   
 
      const [todos, setTodo] = useState([]);
      useEffect(() => {
@@ -29,7 +32,11 @@ const ManageTodo = () => {
                 <td>{todo.title}</td>
                 <td>{todo.description}</td>
 
-                 
+                <td>
+                  <button className="bg bg danger" onClick={()=>navigate(`/update/${todo._id}`)}  >Edit
+                    <i class="fa-solid   fa-trash"></i>
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

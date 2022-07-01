@@ -9,6 +9,7 @@ import Register from "./components/Register/Register";
 import Todo from "./components/Todo/Todo";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
+import UpdateTodo from "./components/UpdateTodo/UpdateTodo";
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signup" element={<Register />}></Route>
         <Route path="/todo" element={<Todo />}></Route>
         <Route path="/manage-todo" element={<ManageTodo />}></Route>
+        <Route path="/update/:Id" element={<UpdateTodo />}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
