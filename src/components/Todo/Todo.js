@@ -1,15 +1,37 @@
 import React from 'react';
-//  import { toast } from "react-toastify";
+ import { toast } from "react-toastify";
 //  import { useForm } from "react-hook-form";
  import { useForm } from "react-hook-form";
 
 const Todo = () => {
 
-     const { register, handleSubmit} = useForm();
-     const onSubmit = data => console.log(data);
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data, e) => {
+    // console.log(data);
+    e.target.reset();
+    console.log(e.target)
+
+    const url = `http://localhost:5000/todo`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        toast("Add done");
+      });
+  };
+     
 
      return (
-          <div class="hero min-h-screen bg-base-200">
+        <div>
+
+<div class="hero min-h-screen bg-base-200">
           <div class="hero-content lg:grid-cols-12">
             <div className="card   flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
               <h1 className=" font-bold text-2xl text-center mt-8">Add Task</h1>
@@ -44,6 +66,10 @@ const Todo = () => {
               </div>
             </div>
           </div>
+        </div>
+
+
+        
         </div>
      );
 };
