@@ -7,7 +7,7 @@ const ManageTodo = () => {
 
      const [todos, setTodo] = useState([]);
      useEffect(() => {
-       fetch("http://localhost:5000/manage-todo")
+       fetch("https://frozen-brushlands-83872.herokuapp.com/manage-todo")
          .then((res) => res.json())
          .then((data) => setTodo(data));
      }, []);

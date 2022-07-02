@@ -11,7 +11,7 @@ const UpdateTodo = () => {
   const onSubmit = (data, e) => {
 //     console.log(e);
 e.target.reset();
-const url = `http://localhost:5000/updatetask/${Id}`;
+const url = `https://frozen-brushlands-83872.herokuapp.com/updatetask/${Id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -28,7 +28,7 @@ const url = `http://localhost:5000/updatetask/${Id}`;
   };
 
   useEffect(()=>{
-          fetch(`http://localhost:5000/task/${Id}`)
+          fetch(`https://frozen-brushlands-83872.herokuapp.com/task/${Id}`)
           .then(res => res.json())
           .then(data => setTask(data))
 
