@@ -18,6 +18,9 @@ const ManageTodo = () => {
         <table class="table w-full">
           <thead>
             <tr>
+            {/* <label>
+            <input type="checkbox" class="checkbox" />
+          </label> */}
               <th>Serial No</th>
               <th>Todo Title</th>
               <th>Todo Description</th>
@@ -28,7 +31,15 @@ const ManageTodo = () => {
           <tbody>
             {todos.map((todo, i) => (
               <tr>
+                 <th>
+          <label>
+            <input type="checkbox" class="checkbox" />
+          </label>
+        </th>
                 <th>{i + 1}</th>
+                <td><div class="form-control">
+   
+</div></td>
                 <td>{todo.title}</td>
                 <td>{todo.description}</td>
 
