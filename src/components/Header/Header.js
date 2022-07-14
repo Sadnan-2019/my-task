@@ -1,8 +1,10 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 // import { Container, Nav, Navbar, NavDropdown,NavLink } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+
+
 import auth from '../../firebase.int';
 
 
